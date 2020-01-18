@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { AboutComponent } from './about/about.component';
+import { SuccessComponent } from './success/success.component';
 
 const appRoutes: Routes = [
+  { path: 'success', component: SuccessComponent},
   { path: 'about', component: AboutComponent},
   { path: '', component: LandingpageComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
@@ -18,7 +20,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     LandingpageComponent,
-    AboutComponent
+    AboutComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
