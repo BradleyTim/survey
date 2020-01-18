@@ -6,17 +6,16 @@
 }
 
 .jumbotron {
-    width: 80%;
+    width: 70%;
     margin: 2rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.landingpage .message {
-    flex: 1;
+.message {
+    /* flex: 1; */
     text-align: left;
-    font-size: 2rem;
 }
 
 .btn-landing {
@@ -33,8 +32,8 @@
     color: var(--secondary-color);
 }
 
-.landingpage .landing-image {
-  flex: 1;
+.landing-image {
+  /* flex: 1; */
 }
 
 img {
@@ -42,8 +41,44 @@ img {
     height: auto;
 }
 
+h3 {
+    font-size: 2rem;
+}
+
 p {
     color: #bbb;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin: 1rem 0;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .landingpage {
+       text-align: center; 
+    }
+
+    .jumbotron {
+      width: 80%;
+      margin: 2rem auto;
+      display: grid;
+      place-items: center;
+      /* align-items: center;
+      justify-content: center; */
+    }
+
+    .message {
+        text-align: center;
+    }
+
+    .landing-image {
+        display: none;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    a {
+        font-size: 1.35rem;
+    }
 }
