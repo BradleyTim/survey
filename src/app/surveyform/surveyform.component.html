@@ -1,0 +1,63 @@
+<section class="survey-form">
+  <form>
+    <h3>Simba Survey</h3>
+    <div class="form-group">
+      <label for="name">What is your name?</label>
+      <input class="form-control" type="text" name="name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="form-control" type="email" name="email" id="email">
+    </div>
+    <div class="form-group">
+      <label for="get-to-know-us">How did you know about simba speed governor or Numeral IOT?</label>
+      <!-- <input class="form-control" type="text" name="get-to-know-us" id="get-to-know-us"> -->
+      <textarea class="form-control" name="get-to-know-us" id="get-to-know-us" cols="30" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="purchase-location">Where did you purchase the Simba Speed Governor?</label>
+      <input class="form-control" type="text" name="purchase-location" id="purchase-location">
+    </div>
+    <div class="form-group">
+      <label for="purchase-reason">What made you purchase the Simba Speed Governor?</label>
+      <!-- <input class="form-control" type="text" name="purchase-reason" id="purchase-reason"> -->
+      <textarea class="form-control" name="purchase-reason" id="purchase-reason" cols="30" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="issues">What issues have you experienced with Simba Speed Governor?</label>
+      <!-- <input class="form-control" type="text" name="issues" id="issues"> -->
+      <textarea class="form-control" name="issues" id="issues" cols="30" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="benefits">What benefits did you experience with Simba Speed Governor?</label>
+      <!-- <input class="form-control" type="text" name="issues" id="issues"> -->
+      <textarea class="form-control" name="benefits" id="benefits" cols="30" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="occupation">What is your job Occupation and how has simba speed Governor impacted your work or life?</label>
+      <input class="form-control" type="text" name="occupation" id="occupation">
+    </div>
+    <div class="form-group">
+      <label for="age-group">Which Age group are you in? </label>
+      <div class="" *ngFor="let ageGroup of ageGroups">
+         <input class="" type="checkbox" name="age-group" id="age-group"> {{ageGroup}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="residence">What`s your area of residence and have you noticed any vehicles fitted with simba speed Governor in your residence ?</label>
+      <input class="form-control" type="text" name="residence" id="residence">
+    </div>
+    <div class="form-group">
+      <label for="rate">How would you rate Simba speed Governor?</label>
+      <div class="" *ngFor="let rate of rates">
+         <input class="" type="checkbox" name="rate" id="rate"> {{rate}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="suggestions">Tell us in your own words how we can improve our products and services.</label>
+      <!-- <input class="form-control" type="text" name="issues" id="issues"> -->
+      <textarea class="form-control" name="suggestions" id="suggestions" cols="30" rows="5"></textarea>
+    </div>
+    <button class="btn btn-submit" type="submit">Submit</button>
+  </form>
+</section>
