@@ -52,8 +52,7 @@ export class SurveyformComponent implements OnInit {
   }
 
   onSubmit(): void {
-    let data = Object.assign({}, this.survey);
-    this.dataService.addSurvey(data);
+    this.dataService.addSurvey(this.survey);
     this.router.navigate(["/success"]);
   }
 
