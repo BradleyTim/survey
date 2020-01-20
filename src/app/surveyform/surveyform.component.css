@@ -12,6 +12,10 @@ h3 {
     margin: 1rem 0;
 }
 
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 .form-control {
     display: block;
     width: 100%;
@@ -22,17 +26,35 @@ h3 {
 }
 
 .form-control:focus {
-    border: 2px solid var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.is-invalid {
+    border: 1px solid var(--danger-color);
 }
 
 .form-check {
     display: inline-block;
 }
 
+.alert {
+    display: none;
+    color: red;
+}
+
+.alert-warning {
+    display: block;
+}
+
 .btn-submit {
     background: var(--secondary-color);
     color: #fff;
     transition: background .3s ease-in;
+}
+
+.btn-submit:disabled {
+    color: black;
+    background: #ccc;
 }
 
 .btn-submit:hover {
