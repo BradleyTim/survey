@@ -42,19 +42,18 @@ export class SurveyformComponent implements OnInit {
     'Suggestions'
   );
 
-  surveys: any[];
+  surveys = [];
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    // this.dataService.getSurveys().subscribe(data => console.log(data));
     this.surveys = this.dataService.getSurveys();
     console.log(this.surveys);
   }
 
   onSubmit(): void {
-    console.log(this.survey);
-    this.dataService.addSurvey(this.survey);
+    let data = Object.assign({}, this.survey);
+    this.dataService.addSurvey(data);
     this.router.navigate(["/success"]);
   }
 
