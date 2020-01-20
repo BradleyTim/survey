@@ -18,14 +18,15 @@ export class DataService {
     if (localStorage.getItem("surveys") == null) {
       return [];
     } else {
-      return JSON.parse(localStorage.getItem("tickets"));
+      return JSON.parse(localStorage.getItem("surveys"));
     }
   }
 
-  addSurvey(survey: any): any[] {
-    let surveys = [];
-    localStorage.setItem("surveys", JSON.stringify([survey, ...surveys]));
-    return surveys;
+  addSurvey(survey: any): void {
+    localStorage.setItem(
+      "surveys",
+      JSON.stringify([survey, ...JSON.parse(localStorage.getItem("surveys"))])
+    );
   }
 
   // getSurveys(): any {
