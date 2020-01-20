@@ -28,31 +28,26 @@ export class SurveyformComponent implements OnInit {
   ];
 
   survey = new Survey(
-    'Name',
-    'exmail@example.com',
-    'How did you get to know us..',
-    'Where did you purchase Simba Governor',
-    'What made you purchase the Simba Speed Governor',
-    'Any issues?',
-    'Your occupation',
-    'Any benefits..',
-    'Age group',
-    'Address or Estate',
-    'Rate us',
-    'Suggestions'
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
   );
-
-  // surveys = [];
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    // this.surveys = this.dataService.getSurveys();
-    // console.log(this.surveys);
   }
 
   onSubmit(): void {
-    // console.log(this.survey);
     this.dataService.addSurvey(this.survey);
     this.router.navigate(["/success"]);
   }
