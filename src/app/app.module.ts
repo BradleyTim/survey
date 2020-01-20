@@ -17,10 +17,12 @@ import { AboutComponent } from './about/about.component';
 import { SuccessComponent } from './success/success.component';
 import { SurveyformComponent } from './surveyform/surveyform.component';
 import { SurveysComponent } from './surveys/surveys.component';
+import { SurveydetailComponent } from './surveydetail/surveydetail.component';
 
 const appRoutes: Routes = [
   { path: 'success', component: SuccessComponent},
   { path: 'survey', component: SurveyformComponent},
+  { path: 'results/:name', component: SurveydetailComponent},
   { path: 'results', component: SurveysComponent},
   { path: 'about', component: AboutComponent},
   { path: '', component: LandingpageComponent},
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     AboutComponent,
     SuccessComponent,
     SurveyformComponent,
-    SurveysComponent
+    SurveysComponent,
+    SurveydetailComponent
   ],
   imports: [
     BrowserModule,
