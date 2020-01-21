@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
+import { Survey } from '../shared/survey';
 
 @Component({
   selector: "app-surveys",
@@ -9,12 +10,23 @@ import { DataService } from '../shared/data.service';
 })
 export class SurveysComponent implements OnInit {
 
-  surveys: any[] = [];
+  surveys: Survey[] = [];
 
   constructor(private dataService: DataService) {}
 
+  // ngOnInit() {
+  //   this.surveys = this.dataService.getSurveys();
+  //   console.log(this.surveys);
+  // }
+
   ngOnInit() {
-    this.surveys = this.dataService.getSurveys();
-    console.log(this.surveys);
+    this.dataService.getSurveys().subscribe(actionArray => {
+      this.surveys = actionArray.map(item => {
+        return {
+          id: item.payload.doc.id,
+          ...Object.assign({}, item.payload.doc.data())
+        } as Survey;
+      })
+    });
   }
 }

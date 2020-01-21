@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Survey } from '../shared/survey';
 
 @Component({
   selector: "app-surveydetail",
@@ -9,7 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   providers: [DataService]
 })
 export class SurveydetailComponent implements OnInit {
-  survey: any;
+
+  survey: Survey;
 
   constructor(
     private route: ActivatedRoute,
@@ -17,12 +19,26 @@ export class SurveydetailComponent implements OnInit {
     private dataService: DataService
   ) {}
 
+  // ngOnInit() {
+  //   let name = this.route.snapshot.paramMap.get("name");
+  //   this.dataService.getSurveys().filter(survey => {
+  //     return survey.name == name ? (this.survey = survey) : "";
+  //   });
+  //   console.log(name);
+  // }
+
   ngOnInit() {
-    let name = this.route.snapshot.paramMap.get("name");
-    this.dataService.getSurveys().filter(survey => {
-      return survey.name == name ? (this.survey = survey) : "";
+    let id = this.route.snapshot.paramMap.get("id");
+    this.dataService.getSurveys().subscribe(actionArray => {
+      return this.survey = actionArray.filter(item => {
+        if (item && id == item.payload.doc.id) {
+          return {
+            id: item.payload.doc.id,
+            ...Object.assign({}, item.payload.doc.data())
+          } as Survey;
+        }
+      });
     });
-    console.log(name);
   }
 
   onBack(): void {

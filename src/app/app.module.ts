@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // Firebase
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database'; 
 import { environment } from '../environments/environment';
 
 
@@ -18,6 +18,7 @@ import { SuccessComponent } from './success/success.component';
 import { SurveyformComponent } from './surveyform/surveyform.component';
 import { SurveysComponent } from './surveys/surveys.component';
 import { SurveydetailComponent } from './surveydetail/surveydetail.component';
+
 
 const appRoutes: Routes = [
   { path: 'success', component: SuccessComponent},
@@ -44,8 +45,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig, 'simbasurvey'),
-    // AngularFirestoreModule, // Only required for database features
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'simbasurvey'),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

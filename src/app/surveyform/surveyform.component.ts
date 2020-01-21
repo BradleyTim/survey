@@ -27,7 +27,8 @@ export class SurveyformComponent implements OnInit {
     'Excellent'
   ];
 
-  survey = new Survey(
+  survey: Survey = new Survey(
+    '',
     '',
     '',
     '',
@@ -47,9 +48,15 @@ export class SurveyformComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(): void {
-    this.dataService.addSurvey(this.survey);
-    this.router.navigate(["/success"]);
+  onSubmit() {
+    let data = Object.assign({}, this.survey);
+    delete data.id;
+    this.dataService.addSurvey(data);
   }
+
+  // onSubmit(): void {
+  //   this.dataService.addSurvey(this.survey);
+  //   this.router.navigate(["/success"]);
+  // }
 
 }
